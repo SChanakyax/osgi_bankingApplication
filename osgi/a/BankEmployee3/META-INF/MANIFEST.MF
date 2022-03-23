@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: BankEmployee3
+Bundle-SymbolicName: BankEmployee3
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: bankemployee3.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: BankEmployee3
+Import-Package: com.mtit.service,
+ org.osgi.framework;version="1.3.0",
+ publisher2,
+ publisher3,
+ recurringdepositcalculator
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,28 @@
+package publisher2;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceRegistration;
+
+
+
+public class Activator implements BundleActivator {
+
+	ServiceRegistration publishServiceRegistration;
+
+	@Override
+	public void start(BundleContext context) throws Exception {
+
+		System.out.println("Interest Calculator Start");
+		SimpleInterest publisherService = new SimpleInterestImpl();
+		publishServiceRegistration = context.registerService(
+		SimpleInterest.class.getName(), publisherService, null);
+	}
+
+	@Override
+	public void stop(BundleContext context) throws Exception {
+		System.out.println("Interest Calculator Stop");
+		publishServiceRegistration.unregister();
+	}
+
+}
